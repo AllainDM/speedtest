@@ -1,7 +1,10 @@
 import uvicorn
 from fastapi import FastAPI, Response
 from starlette.background import BackgroundTask
+
 import io
+
+import config
 
 app = FastAPI()
 
@@ -37,4 +40,4 @@ async def download_file():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=config.PORT)
